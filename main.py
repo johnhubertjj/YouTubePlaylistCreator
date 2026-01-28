@@ -1,9 +1,8 @@
 from access_year_and_artists import GetArtists
-from access_youtube import YoutubeClient
+from access_youtube import YoutubeClient, YoutubePlaylistConfig
 
-# date = input('Which Year do you want to travel to? Type the date in this format YYYY-MM-DD' )
+date = input('Which Year do you want to travel to? Type the date in this format YYYY-MM-DD' )
 
-date = '1978-02-04'
 header = {'USER-AGENT': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) '
                         'AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0.1 Safari/605.1.15'}
 
@@ -21,9 +20,14 @@ print(artist_names)
 
 tracks = list(zip(artist_names[0], artist_names[1]))
 
-youtube_client = YoutubeClient(client_secret_file="client_secret.json", tracks=tracks,
-                               playlist_title="Singles Chart 1978-02-04",
-                               playlist_description="Auto-generated from extracted chart HTML.",
-                               privacy="unlisted")
+# Example config:
+config = YoutubePlaylistConfig(
+    client_secret_file="client_secret.json",
+    playlist_title="My Playlist",
+    playlist_description="Created via API",
+    privacy="private",
+)
+
+youtube_client = YoutubeClient(tracks = tracks, config = config)
 
 youtube_client.build_playlist_from_tracks()

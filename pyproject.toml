@@ -8,5 +8,7 @@ dependencies = [
     "bs4>=0.0.2",
     "google-api-python-client>=2.188.0",
     "google-auth-oauthlib>=1.2.4",
+    "mypy>=1.19.1",
+    "pylint>=4.0.4",
     "requests>=2.32.5",
 ]
