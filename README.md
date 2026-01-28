@@ -2,7 +2,7 @@
 
 ## Setup
 
-1. Create a youtube channel by logging into your google account on youtube:
+1. Create a youtube account by logging into your google account on youtube:
 ![youtube_signup_picture](static/Screenshot%202026-01-28%20at%2020.24.46.png)
 2. Create a Youtube channel by clicking on your profile picture and selecting 'create channel'
 3. Go to https://console.cloud.google.com/
